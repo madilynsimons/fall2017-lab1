@@ -5,12 +5,12 @@
 
  #include <stdio.h>
  
- int GetLength( char string[] );
- int IsLowerCase( char c );
+ int  GetLength( char string[] );
+ int  IsLowerCase( char c );
  char ToUpperCase( char c);
  void SetStringInput( char string [] );
  void Reverse( char string[], int length );
- int Capitalize( char string[], int length );
+ int  Capitalize( char string[], int length );
  void Print( char string[], int length, int capitalized );
 
 int main()
@@ -37,7 +37,7 @@ int GetLength( char string[] )
    int length = 0;
    while(string[length] != '\0')
    {
-	   length++;
+      length++;
    }
    return length - 1;
 }
@@ -48,7 +48,7 @@ int GetLength( char string[] )
  */
 int IsLowerCase( char c )
 {
-	return (c > 96) && (c < 123);
+   return (c > 96) && (c < 123);
 }
 
 /**
@@ -56,8 +56,8 @@ int IsLowerCase( char c )
  */
 char ToUpperCase( char c )
 {
-	c = c - 32;
-	return c;
+   c = c - 32;
+   return c;
 }
 
 /**
@@ -74,19 +74,17 @@ void SetStringInput( char string[] )
  */
 void Reverse( char string[], int length )
 {
-	int left = 0;
-	int right = length - 1;
-	
-	while(left < right)
-	{
-		char temp = string[left];
-		string[left] = string[right];
-		string[right] = temp;
-		left++;
-		right--;
-	}
-	
-	return;
+   int left = 0;
+   int right = length - 1;
+      while(left < right)
+   {
+      char temp = string[left];
+      string[left] = string[right];
+      string[right] = temp;
+      left++;
+      right--;
+   }
+      return;
 }
 
 /**
@@ -95,17 +93,17 @@ void Reverse( char string[], int length )
  */
 int Capitalize( char string[], int length )
 {
-	int x;
-	int count = 0;
-	for(x = 0; x < length; x++)
-	{
-		if(IsLowerCase(string[x]))
-		{
-			string[x] = ToUpperCase(string[x]);
-			count++;
-		}
-	}
-	return count;
+   int x;
+   int count = 0;
+   for(x = 0; x < length; x++)
+   {
+      if(IsLowerCase(string[x]))
+      {
+         string[x] = ToUpperCase(string[x]);
+         count++;
+      }
+   }
+   return count;
 }
 
 /**
@@ -113,12 +111,11 @@ int Capitalize( char string[], int length )
  */
 void Print( char string[], int length, int capitalized )
 {
-	int x;
-	for(x = 0; x < length; x++)
-	{
-		printf("%c\n", string[x]);
-	}
-	
-	printf("The string is %d chars and %d chars were capitalized", length, capitalized);
-	return;
+   int x;
+   for(x = 0; x < length; x++)
+   {
+      printf("%c\n", string[x]);
+   }
+      printf("The string is %d chars and %d chars were capitalized\n", length, capitalized);
+   return;
 }
